@@ -15,7 +15,7 @@ export default function MusicPlayer() {
     // Create Howl instance once
     if (!sound) {
       sound = new Howl({
-        src: ['/music/birthday-song.mp3'],
+        src: [`${import.meta.env.BASE_URL}music/birthday-song.mp3`],
         loop: true,          // perfect gapless loop
         volume: 0.6,
         html5: false,        // Web Audio API — better loop (no gap)

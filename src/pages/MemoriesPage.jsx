@@ -6,11 +6,13 @@ import LoveCounter from '../components/LoveCounter/LoveCounter';
 import NextButton from '../components/NextButton/NextButton';
 import './MemoriesPage.css';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 // 18 photos: expects images in public/images/memories/1.jpg, 2.jpg... 18.jpg
 const MEMORIES = Array.from({ length: 18 }, (_, i) => ({
   id: i + 1,
   label: `Memory ${i + 1}`,
-  src: `/images/memories/${i + 1}.jpg`,
+  src: `${BASE_URL}images/memories/${i + 1}.jpg`,
   fallbackGradient: [
     'linear-gradient(135deg, #FF6B9D, #C44569)',
     'linear-gradient(135deg, #A855F7, #6C3483)',
