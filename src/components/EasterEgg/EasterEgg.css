@@ -1,0 +1,23 @@
+.easter-egg-popup {
+  position: fixed;
+  transform: translate(-50%, -120%);
+  z-index: var(--z-modal);
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.easter-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.easter-heart {
+  font-size: 1.2rem;
+  animation: heartbeat 1s ease infinite;
+}

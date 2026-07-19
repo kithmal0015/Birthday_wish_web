@@ -1,0 +1,122 @@
+.cake-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1rem 3rem;
+}
+
+.cake-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0d0621 0%, #1a0a2e 20%, #2d1b69 45%, #6B2FA0 70%, #C44569 90%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.cake-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Typewriter */
+.cake-typewriter {
+  padding: 1rem 2rem;
+  text-align: center;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.cake-typewriter-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3.5vw, 1.7rem);
+  color: white;
+  text-shadow: 0 0 15px rgba(255,107,157,0.6);
+}
+
+.cake-cursor {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  font-weight: 300;
+}
+
+/* Cake scene */
+.cake-scene {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  min-height: 280px;
+}
+
+.cake-svg-wrap {
+  position: relative;
+  filter: drop-shadow(0 20px 40px rgba(255,107,157,0.4));
+}
+
+.cake-glow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 30px;
+  background: radial-gradient(ellipse, rgba(255,107,157,0.4), transparent 70%);
+  filter: blur(8px);
+}
+
+.cake-penguin {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+}
+
+/* Wind */
+.cake-wind {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  font-size: 1.8rem;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Button */
+.cake-btn {
+  font-size: 1rem !important;
+  padding: 0.9rem 1.8rem !important;
+  max-width: 420px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Status */
+.cake-status {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  background: var(--glass-bg);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 600px) {
+  .cake-scene { flex-direction: column; align-items: center; }
+  .cake-penguin { position: relative; right: auto; bottom: auto; }
+  .cake-btn { font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
+}

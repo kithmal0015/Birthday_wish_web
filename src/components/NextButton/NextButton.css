@@ -1,0 +1,21 @@
+.next-btn-with-penguin {
+  position: relative;
+  overflow: visible !important;
+}
+
+.next-btn-penguin-wrap {
+  position: absolute;
+  right: -30px;
+  top: -35px;
+  pointer-events: none;
+  z-index: 10;
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+  .next-btn-penguin-wrap {
+    right: -25px;
+    top: -30px;
+    transform: scale(0.8);
+  }
+}

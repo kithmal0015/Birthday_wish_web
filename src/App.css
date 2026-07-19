@@ -1,0 +1,24 @@
+/* App.css */
+
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Page transition flash/ripple overlay */
+.page-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 107, 157, 0.18) 0%,
+    rgba(168, 85, 247, 0.12) 40%,
+    rgba(255, 255, 255, 0.04) 70%,
+    transparent 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
