@@ -47,7 +47,7 @@ export default function FinalPage() {
           src={`${import.meta.env.BASE_URL}videos/nethu.mp4`}
           autoPlay
           loop
-          muted={false}
+          muted
           playsInline
         />
         {/* Dark overlay so text is readable */}
