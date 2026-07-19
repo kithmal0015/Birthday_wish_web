@@ -39,13 +39,25 @@ export default function FinalPage() {
         className="final-goodbye"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.2 }}
       >
+        {/* Video background */}
+        <video
+          className="final-goodbye-video"
+          src={`${import.meta.env.BASE_URL}videos/nethu.mp4`}
+          autoPlay
+          loop
+          muted={false}
+          playsInline
+        />
+        {/* Dark overlay so text is readable */}
+        <div className="final-goodbye-overlay" />
+
         <motion.div
           className="final-goodbye-content"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.7, ease: 'backOut' }}
+          transition={{ delay: 0.8, duration: 0.7, ease: 'backOut' }}
         >
           <motion.div
             className="final-heart"
