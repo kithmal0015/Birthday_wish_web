@@ -321,7 +321,7 @@ export default function CakePage({ onNext, onPrev }) {
                  !cut ? '🔪 Cutting the cake...' :
                  !showPenguin ? '🍰 Taking a slice...' :
                  penguinPhase === 'slice' ? '🐧 Penguin grabbed a slice!' :
-                 '🐧 Feeding you some cake! 😋'}
+                 'Feeding you some cake! 😋'}
               </motion.p>
             )}
           </AnimatePresence>

@@ -136,7 +136,7 @@ export default function LoadingScreen({ onComplete }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          {['❤️', '💕', '🩷', '💖', '🫀'].map((h, i) => (
+          {['❤️', '💕', '🩷', '💖', ].map((h, i) => (
             <motion.span
               key={i}
               animate={{ y: [0, -10, 0], scale: [1, 1.3, 1] }}
