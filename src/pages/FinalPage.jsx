@@ -119,7 +119,7 @@ export default function FinalPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            🎉 Happy Birthday, Nethu! 🎉
+            🎉 Happy Birthday, Baby! 🎉
           </motion.h2>
 
           {/* Dancing penguins */}

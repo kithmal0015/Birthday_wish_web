@@ -76,7 +76,7 @@ export default function CardPage({ onNext, onPrev }) {
                 >
                   <div className="card-front-design">
                     <div className="card-front-hearts">
-                      {['💖', '🌸', '✨', '💕', '🎂'].map((e, i) => (
+                      {['💕', '🌸', '🎂'].map((e, i) => (
                         <motion.span
                           key={i}
                           animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
