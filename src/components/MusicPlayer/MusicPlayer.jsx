@@ -16,9 +16,9 @@ export default function MusicPlayer() {
     if (!sound) {
       sound = new Howl({
         src: [`${import.meta.env.BASE_URL}music/birthday-song.mp3`],
-        loop: true,          // perfect gapless loop
+        loop: true,          // gapless loop
         volume: 0.6,
-        html5: false,        // Web Audio API — better loop (no gap)
+        html5: true,         // HTML5 Audio — required for reliable playback on mobile phones (iOS/Android)
         preload: true,
         onplay: () => setPlaying(true),
         onpause: () => setPlaying(false),
@@ -26,25 +26,22 @@ export default function MusicPlayer() {
       });
     }
 
-    // Try autoplay immediately
+    // Try playing audio (will succeed on interaction if browser blocked autoplay)
     const tryPlay = () => {
-      if (startedRef.current) return;
-      startedRef.current = true;
-      if (sound && !sound.playing()) {
+      if (sound && !sound.playing() && !isMutedGlobal) {
         sound.play();
       }
     };
 
-    // Auto-play attempt (works on desktop)
+    // Auto-play attempt on load (works on desktop)
     tryPlay();
 
-    // Fallback: first user interaction on mobile
-    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
-    document.addEventListener('click', tryPlay, { once: true });
-    document.addEventListener('keydown', tryPlay, { once: true });
+    // On mobile, audio starts on first user touch/click anywhere on screen
+    document.addEventListener('touchstart', tryPlay, { passive: true });
+    document.addEventListener('click', tryPlay);
+    document.addEventListener('keydown', tryPlay);
 
     return () => {
-      // Don't destroy — keep playing across page transitions
       document.removeEventListener('touchstart', tryPlay);
       document.removeEventListener('click', tryPlay);
       document.removeEventListener('keydown', tryPlay);
